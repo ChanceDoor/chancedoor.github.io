@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://ChanceDoor.github.io
+title: 多多尔斯基的博客
+subtitle: 保留用文字记录所思所想的能力
+author: Duo
 simple_search: http://google.com/search
 description:
 
