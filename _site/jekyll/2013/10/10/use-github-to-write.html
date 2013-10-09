@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
+        <title>直接在 github 上写文章</title>
         <meta name="viewport" content="width=device-width">
 
         <!-- syntax highlighting CSS -->
@@ -17,11 +17,20 @@
 
         <div class="site">
           <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+            <h1 class="title"><a href="/"></a></h1>
             <a class="extra" href="/">home</a>
           </div>
 
-          {{ content }}
+          <h2>直接在 github 上写文章</h2>
+
+<p>怎么才能像其他博客一样，打开网页就能写呢？直接用 github 就可以啦。</p>
+
+<p>进入你博客项目的仓库，到 _posts 目录下新建文件，文件名仍然是日期加名称，后缀名为 .md 的文件。</p>
+
+<p>写进内容，保存即可。</p>
+
+<p>当然，要想在博客中显示，还得 git pull 到本地仓库进行 jekyll build，再 git add . git commit git push 才行……</p>
+
 
           <div class="footer">
             <div class="contact">
