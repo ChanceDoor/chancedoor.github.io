@@ -1,2 +1,4 @@
+name: Duo
 baseurl: http://chancedoor.github.io
 markdown: redcarpet
+pygments: true

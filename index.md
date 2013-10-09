@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Duo多尔斯基的Blog
+title: 多多尔斯基的Blog
 ---
 ## {{ page.title }}
 最新文章  
