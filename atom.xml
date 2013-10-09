@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[多多尔斯基的博客]]></title>
+  <link href="http://ChanceDoor.github.io/atom.xml" rel="self"/>
+  <link href="http://ChanceDoor.github.io/"/>
+  <updated>2013-10-10T02:38:50+08:00</updated>
+  <id>http://ChanceDoor.github.io/</id>
+  <author>
+    <name><![CDATA[Duo]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
