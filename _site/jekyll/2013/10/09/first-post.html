@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+　　<html>
+  　　<head>
+    　　　　<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    　　　　<title>用Jekyll写博客（一）</title>
+    　　</head>
+  　　<body>
+
+    　　　　
+<h2 id="jekyll">用Jekyll写博客（一）</h2>
+
+<h1 id="">前言</h1>
+
+<p>Jekyll是一个非常酷的静态页面生成程序，用它来做博客系统很极客，不过这年头要么文艺犯装点小极客，要么理工僧装点小文艺，总要给人以文武双全的感觉。所以这篇文章适用于如何快速构建小白眼中狂拽炫酷帅的“个人文艺思想站”，相信大家装着装着可能也就真成了思想家了。</p>
+
+<h1 id="_2">第一步：所需环境</h1>
+
+<p>确定你的电脑已经有了Ruby环境，以及安装了gem，0基础的同学可以参考<a href="http://ruby-china.org/wiki/install_ruby_guide">Ruby-China的超快速无脑安装指南</a>，安装完步骤3即可。</p>
+
+<h1 id="_jekyll">第二步：安装 Jekyll</h1>
+
+<p>运行</p>
+
+<pre><code>gem install jekyll </code></pre>
+
+<h1 id="_3">第三步：创建文件目录</h1>
+
+<p>运行</p>
+
+<pre><code>jekyll new myblog</code></pre>
+
+<p>这样你就已经有了自己的完整的博客生成系统了，_posts目录用来存放写好的文章，但是要以 年-月-日-标题.md 的格式命名，这里用 md 是因为选择使用 markdown 语言来写，别下意识地逃避，其实这语言记住很简单的几个写法就可以使用，而如果要使排版更好看，那就需要一点时间去学习和记住特殊的写法了。</p>
+
+<h1 id="_4">第四步：修改配置</h1>
+
+<p>根目录下的_config.yml文件是配置文件，现在只要修改其中的 name 为你自己想要的博客名称就可以了，需要注意，后缀为 yml 的文件是严格要求书写格式的，空格数量不同也会出错。</p>
+
+<h1 id="_5">第五步：修改首页</h1>
+
+<p>根目录下的 index.html 文件用来生成博客首页，可以将它删除，新建一个名为 index.md 的 markdown 格式文件。输入下列代码：</p>
+
+<p><code>---</code><br /><code>layout: default</code> <br /><code>title: 我的第一篇文章</code> <br /><code>---</code></p>
+
+<pre><code>## {{ page.title }}
+
+最新文章
+{% for post in site.posts %}
++ {{ post.date | date_to_string }} [{{ post.title }}]({{site.baseurl}}{{post.url}})
+{% endfor %}</code></pre>
+<hr />
+<p>其中前四行也是严格书写的，意味着 layout:前面不能有空格，后面的空格不能多也不能少。 <br />剩下的东西可以先不去深究。</p>
+
+<h1 id="_6">第六步：写第一篇文章</h1>
+
+<p>好了，下面可以开始写文章了，首先在_posts目录下创建一个 markdown 格式的文章生成文件，如 2013-10-09-first-post.md 。 <br />在最前面仍然需要写上页面基本设定的语句，如：</p>
+
+<p><code>---</code> <code>layout: default</code><br /><code>title: 我的第一篇博客</code><br /><code>category: Blog</code><br /><code>---</code></p>
+
+<p>这三句分别指定了这篇文章的页面使用什么模板、页面的标题、文章所属目录。 在下面开始写文章内容，如：</p>
+
+<pre><code>## {{ page.title }}
+
+今天我用2分钟搞定了一个很酷的网站！</code></pre>
+
+<p>至于 markdown 的写法，可以参阅<a href="http://daringfireball.net/projects/markdown/">markdown 官方文档</a></p>
+
+<h1 id="_7">第七步：生成博客</h1>
+
+<p>在根目录下运行命令：</p>
+
+<pre><code>jekyll build</code></pre>
+
+<p>运行完毕，如果没有报出错误的话，你的博客已经生成了，在_site 目录下的 index.html 就是你的首页，jekyll 中则是文章页。</p>
+
+<h1 id="_github">第八步：部署到 Github</h1>
+
+<p>首先你要安装 git 工具(如果你是通过 Ruby-China 的链接来安装 ruby 的，那么你已经有了 git 工具)，并且在 <a href="https://github.com">Github</a> 上注册一个账号。 <br />点击 github 网站上你名字右边的创建仓库按钮，创建一个名为： 你的用户名/你的用户名.github.io 的仓库，创建成功后，复制地址。 <br />这时需要再次修改配置文件_config.yml ，加入下面一句代码：</p>
+
+<pre><code>baseurl: http://你的用户名.github.io/jekyll    </code></pre>
+
+<p>然后在你的博客生成系统根目录下， 依次运行：</p>
+
+<pre><code>git init    
+git add .    
+git commit -m &#39;init&#39;    
+git remote add origin 你复制的仓库地址 
+git push origin master</code></pre>
+
+<p>输入用户名密码，并 push 成功后，即可访问 http://你的用户名.github.io ，你就能看到你的博客内容了。</p>
+
+<p>之后还可以直接拿来主义，使用非常酷的博客模板，以及集成评论系统之类的插件。</p>
+
+<p>09 Oct 2013</p>
+
+
+    　　</body>
+  　　</html>
