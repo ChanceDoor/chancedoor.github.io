@@ -86,6 +86,7 @@ Jekyll是一个非常酷的静态页面生成程序，用它来做博客系统�
 
     baseurl: http://你的用户名.github.io    
 
+记得再次运行命令 ``jekyll build`` 生成博客    
 然后在你的博客生成系统根目录下， 依次运行：
 
     git init    
@@ -94,8 +95,8 @@ Jekyll是一个非常酷的静态页面生成程序，用它来做博客系统�
     git remote add origin 你复制的仓库地址 
     git push origin master
 
-输入用户名密码，并 push 成功后，即可访问 http://你的用户名.github.io ，你就能看到你的博客内容了。
-
+输入用户名密码，并 push 成功后，即可访问 http://你的用户名.github.io ，你就能看到你的博客内容了。   
+如果显示错误页，那么可能是你的邮箱没有进行验证的原因。    
 之后还可以直接拿来主义，使用非常酷的博客模板，以及集成评论系统之类的插件。
 
 {{ page.date | date_to_string }}
