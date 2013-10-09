@@ -84,7 +84,7 @@ Jekyll是一个非常酷的静态页面生成程序，用它来做博客系统�
 点击 github 网站上你名字右边的创建仓库按钮，创建一个名为： {% raw %}你的用户名/你的用户名.github.io{% endraw %} 的仓库，创建成功后，复制地址。    
 这时需要再次修改配置文件{% raw %}_config.yml{% endraw %} ，加入下面一句代码：
 
-    baseurl: http://你的用户名.github.io/jekyll    
+    baseurl: http://你的用户名.github.io    
 
 然后在你的博客生成系统根目录下， 依次运行：
 
