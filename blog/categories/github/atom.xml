@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Github | 多多尔斯基的博客]]></title>
+  <link href="http://ChanceDoor.github.io/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://ChanceDoor.github.io/"/>
+  <updated>2013-11-07T16:39:05+08:00</updated>
+  <id>http://ChanceDoor.github.io/</id>
+  <author>
+    <name><![CDATA[Duo]]></name>
+    <email><![CDATA[cd19900419@hotmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git 版本管理工具简介]]></title>
+    <link href="http://ChanceDoor.github.io/blog/2013/11/07/git-introduce/"/>
+    <updated>2013-11-07T16:17:00+08:00</updated>
+    <id>http://ChanceDoor.github.io/blog/2013/11/07/git-introduce</id>
+    <content type="html"><![CDATA[<h2>Category: Github</h2>
+
+<p>尚未完成……</p>
+]]></content>
+  </entry>
+  
+</feed>

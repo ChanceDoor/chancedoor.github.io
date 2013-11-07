@@ -9,7 +9,7 @@
 	<meta name="author" content="Duo">
 
 	
-	<meta name="description" content="Oct 9th, 2013 Jekyll Comments 用Jekyll写博客（一） 用Jekyll写博客（一） 前言 Jekyll是一个非常酷的静态页面生成程序，用它来做博客系统很极客，不过这年头要么文艺犯装点小极客，要么理工僧装点小文艺，总要给人以文武双全的感觉。 &hellip;">
+	<meta name="description" content="Nov 7th, 2013 Git, Github Comments Git 版本管理工具简介 Git 版本管理工具简介 尚未完成…… Nov 7th, 2013 Jekyll, Octopress Comments 用Octopress写博客 用Octopress写博客 前言 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -104,6 +104,196 @@
   
 
 
+<time datetime="2013-11-07T16:17:00+08:00" data-updated="true" itemprop="datePublished">Nov 7<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/git/'>Git</a>, <a class='category' href='/blog/categories/github/'>Github</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/11/07/git-introduce/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/11/07/git-introduce/" itemprop="url">Git 版本管理工具简介</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>Git 版本管理工具简介</h2>
+
+<p>尚未完成……</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-07T15:32:00+08:00" data-updated="true" itemprop="datePublished">Nov 7<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/jekyll/'>Jekyll</a>, <a class='category' href='/blog/categories/octopress/'>Octopress</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2013/11/07/blog-by-octopress/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/11/07/blog-by-octopress/" itemprop="url">用Octopress写博客</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>用Octopress写博客</h2>
+
+<h1>前言</h1>
+
+<p>上一篇文章已经说了，Jekyll 是一个非常酷的博客框架，那么它的衍生品该如何评价呢？那就是超级酷的 Octopress！什么？你觉得我说得言过其实了？那你可以看看我这个博客，除非你拿出个更酷的说服我，不然就接受这个现实吧。</p>
+
+<p>当然也有异常小清新的同学还是喜欢 Jekyll 的简洁方便，那请移步<a href="http://chancedoor.github.io/blog/2013/10/09/first-post/">用  Jekyll 写博客</a></p>
+
+<h1>第一步：所需环境</h1>
+
+<p>与 Jekyll 一样，Octopress 也需要 Ruby 环境和 Git 工具，0基础的同学请参考<a href="http://ruby-china.org/wiki/install_ruby_guide">Ruby-China的超快速无脑安装指南</a>，安装完步骤3即可。</p>
+
+<h1>第二步：克隆 Octopress 并安装相关依赖</h1>
+
+<p>运行</p>
+
+<pre><code>git clone https://github.com/imathis/octopress.git octopress    
+cd octopress     
+bundle install
+</code></pre>
+
+<h1>第三步：安装默认主题</h1>
+
+<p>运行</p>
+
+<pre><code>rake install
+</code></pre>
+
+<p>这样事实上已经完成了博客的搭建，但还需要部署到服务器上才能正确地显示。</p>
+
+<h1>第四步：部署到 Github Pages</h1>
+
+<p>Github 是一个代码托管平台，同时还提供一个主页服务，通过将网站文件上传到 Github 的代码仓库，将自动部署到特定的页面，这个博客也是部署在 Github Pages 上的。</p>
+
+<p>在这里我们假设你已经申请了一个 Github 账号。</p>
+
+<p>你需要做的就是新建一个名为 username.github.io 的 Github repository ，记得将“username” 替换为你的账户用户名，如 chancedoor.github.io，接下来只要将静态文件上传到这个仓库，就可以通过 username.github.io 来访问了。</p>
+
+<p>有关 Github 的相关知识，请参阅网络资料，或参考<a href="http://chancedoor.github.io/blog/2013/11/07/git-introduce/">Git 版本管理工具简介</a>。</p>
+
+<p>运行</p>
+
+<pre><code>rake setup_github_pages    
+</code></pre>
+
+<p>输入 Github repo 的地址，再输入以下指令：</p>
+
+<pre><code>rake generate
+rake deploy    
+</code></pre>
+
+<p>这两条命令生成了博客静态文件，并将其部署到 Github 上。</p>
+
+<pre><code>git add .
+git commit -m 'your message'
+git push origin source     
+</code></pre>
+
+<p>这三条命令是将整个项目的修改提交到 Github 的 source 分支，目的是保存最新的源代码。</p>
+
+<h1>第五步：写文章</h1>
+
+<p>运行</p>
+
+<pre><code>rake new_post["title"]
+</code></pre>
+
+<p>其中 title 替换为你的文章的题目，因为会被作为文件名和 URL，所以最好使用英文，然后在生成的文件中修改用于显示的题目。</p>
+
+<p>示例</p>
+
+<pre><code>rake new_post["This Is My First Post"]
+</code></pre>
+
+<p>这会在 source/_posts/ 下生成一个 markdown 文件，打开它即可开始编写文章。</p>
+
+<p>文件的开头同样是说明性的代码块，将这里的 title 改成中文就没有什么问题了。  <br/>
+目录 categories 可以指定单个也可指定多个：</p>
+
+<p>单个</p>
+
+<pre><code>categories: Sass
+</code></pre>
+
+<p>多个</p>
+
+<pre><code>categories: [CSS3, Sass, Media Queries]    
+</code></pre>
+
+<p>当你写完一篇文章并保存后，运行</p>
+
+<pre><code>rake generate
+rake deploy   
+</code></pre>
+
+<p>就可完成部署了。</p>
+
+<h1>第六步：更改主题样式</h1>
+
+<p>为了定制出自己喜欢的博客样式，就需要知道如何使用别人提供的主题，非常简单，这里以我所使用的主题为例。  <br/>
+在博客程序根目录下输入：</p>
+
+<pre><code>$ git clone https://github.com/shashankmehta/greyshade.git .themes/greyshade
+$ echo "\$greyshade: color;" &gt;&gt; sass/custom/_colors.scss //Substitue 'color' with your highlight color
+$ rake "install[greyshade]"
+$ rake generate
+</code></pre>
+
+<p>这就完成了，当然其中还有一些自定义的内容需要你去修改。
+运行</p>
+
+<pre><code>rake deploy   
+</code></pre>
+
+<p>访问上文提到的你的 Github Pages 地址，就可以看到你的博客了。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
 <time datetime="2013-10-09T03:16:00+08:00" data-updated="true" itemprop="datePublished">Oct 9<span>th</span>, 2013</time></div>
 		<div class="tags">
 
@@ -116,13 +306,16 @@
 			<span class="comments"><a href="/blog/2013/10/09/first-post/#disqus_thread">Comments</a></span>
 		
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2013/10/09/first-post/" itemprop="url">用Jekyll写博客（一）</a></h1>
+	<h1 class="title" itemprop="name"><a href="/blog/2013/10/09/first-post/" itemprop="url">用Jekyll写博客</a></h1>
 	<div class="entry-content" itemprop="articleBody">
-		<h2>用Jekyll写博客（一）</h2>
+		<h2>用Jekyll写博客</h2>
 
 <h1>前言</h1>
 
 <p>Jekyll是一个非常酷的静态页面生成程序，用它来做博客系统很极客，不过这年头要么文艺犯装点小极客，要么理工僧装点小文艺，总要给人以文武双全的感觉。所以这篇文章适用于如何快速构建小白眼中狂拽炫酷帅的“个人文艺思想站”，相信大家装着装着可能也就真成了思想家了。</p>
+
+<p><em>不过要直接搭一个像我博客这样炫酷的博客应用，还是强烈建议选择 Octopress</em> <br/>
+请参看<a href="http://chancedoor.github.io/blog/2013/11/07/blog-by-octopress/">用 Octopress 写博客</a></p>
 
 <h1>第一步：所需环境</h1>
 
@@ -219,7 +412,7 @@ git remote add origin 你复制的仓库地址
 git push origin master
 </code></pre>
 
-<p>输入用户名密码，并 push 成功后，即可访问 <a href="http://%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D.github.io">http://%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D.github.io</a> ，你就能看到你的博客内容了。 <br/>
+<p>输入用户名密码，并 push 成功后，即可访问 <a href="http://your-username.github.io">http://your-username.github.io</a> ，你就能看到你的博客内容了。 <br/>
 如果显示错误页，那么可能是你的邮箱没有进行验证的原因。  <br/>
 之后还可以直接拿来主义，使用非常酷的博客模板，以及集成评论系统之类的插件。</p>
 
