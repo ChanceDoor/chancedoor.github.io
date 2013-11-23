@@ -112,7 +112,7 @@
 
 <p>而这篇博客的操作命令主要以 Linux 系统为主， 尤其是 Debian 和 Ubuntu 系统，在这里推荐使用这两种分发版本，Ubuntu 事实上是 Debian 的衍生版本。</p>
 
-<p>Debian 和 Ubuntu 使用 apt-get 可以及其方便地管理应用：</p>
+<p>Debian 和 Ubuntu 使用 apt-get 可以极其方便地管理应用：</p>
 
 <pre><code>$ apt-get install git-core
 </code></pre>
@@ -145,10 +145,13 @@ $ git remote add origin https://github.com/username/reponame.git
 $ git push -u origin master
 </code></pre>
 
-<p>第一行对当前目录进行了 git 初始化，会创建几个 git 相关的配置文件，如.git目录和 .gitignore 等，这一步相当于已经将项目创建为一个git repo 了。
-第二行是很常用的命令，每次对 repo 做出了修改，就需要add 并 commit ，这样才能把变更提交到 git 日志中，否则 git 并不知道你做了修改。
-第三行是将远程 repo 地址加入当前 git repo 的源配置文件中，也就是把当前目录下的一些操作默认设置为对这个远程仓库的操作。
-第四行就是向 origin 源的 master 分支推送代码。这个命令每次 commit 或多次之后使用。</p>
+<p>第一行对当前目录进行了 git 初始化，会创建几个 git 相关的配置文件，如.git目录和 .gitignore 等，这一步相当于已经将项目创建为一个git repo 了。</p>
+
+<p>第二行是很常用的命令，每次对 repo 做出了修改，就需要add 并 commit ，这样才能把变更提交到 git 日志中，否则 git 并不知道你做了修改。</p>
+
+<p>第三行是将远程 repo 地址加入当前 git repo 的源配置文件中，也就是把当前目录下的一些操作默认设置为对这个远程仓库的操作。</p>
+
+<p>第四行就是向 origin 源的 master 分支推送代码。这个命令每次 commit 或多次之后使用。</p>
 
 <p>repo 创建完后默认具有一个 master 分支，一般来说 master 分支作为主分支，由项目经理管理，接受其他分支的合并请求，而不是直接在 master 分支上进行开发。所以最好新建一个 develop 分支（也可以取任何其它名字）：</p>
 
@@ -157,8 +160,9 @@ $ git push origin develop
 $ git checkout develop
 </code></pre>
 
-<p>第一行就是新建分支，但只是本地新建了，第二行是在远程 repo 中也新建这个分支。
-第三行则是切换到 develop 分支，同样也可以用 checkout 切换到别的分支，它还能用于撤销变更。</p>
+<p>第一行就是新建分支，但只是本地新建了，第二行是在远程 repo 中也新建这个分支。</p>
+
+<p>第三行则是切换到 develop 分支，同样也可以用 checkout 切换到别的分支，它还能用于撤销变更。</p>
 
 <pre><code>$ git branch
 </code></pre>
@@ -184,7 +188,7 @@ $ git checkout develop
 
 <p>这样你的所有文件都会删除。</p>
 
-<p>比较好的办法是直接在 commit 时指定 +-a+ ：</p>
+<p>比较好的办法是直接在 commit 时指定 <strong>-a</strong> ：</p>
 
 <pre><code>$ git commit -a -m "this is a commit."
 </code></pre>
