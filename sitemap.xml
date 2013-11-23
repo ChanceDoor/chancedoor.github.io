@@ -1,31 +1,31 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://ChanceDoor.github.io/blog/2013/10/09/first-post/</loc>
+        <loc>http://chancedoor.github.io/blog/2013/10/09/first-post/</loc>
         <lastmod>2013-11-07T15:30:48+08:00</lastmod>
     </url>
     <url>
-        <loc>http://ChanceDoor.github.io/blog/2013/11/07/blog-by-octopress/</loc>
-        <lastmod>2013-11-07T16:38:37+08:00</lastmod>
+        <loc>http://chancedoor.github.io/blog/2013/11/07/blog-by-octopress/</loc>
+        <lastmod>2013-11-23T19:28:11+08:00</lastmod>
     </url>
     <url>
-        <loc>http://ChanceDoor.github.io/blog/2013/11/07/git-introduce/</loc>
-        <lastmod>2013-11-07T16:36:39+08:00</lastmod>
+        <loc>http://chancedoor.github.io/blog/2013/11/07/git-introduce/</loc>
+        <lastmod>2013-11-23T20:59:58+08:00</lastmod>
     </url>
     <url>
-        <loc>http://ChanceDoor.github.io/blog/archives/</loc>
-        <lastmod>2013-11-07T16:38:37+08:00</lastmod>
+        <loc>http://chancedoor.github.io/blog/archives/</loc>
+        <lastmod>2013-11-23T20:59:58+08:00</lastmod>
     </url>
     <url>
-        <loc>http://ChanceDoor.github.io/blog/categories/</loc>
+        <loc>http://chancedoor.github.io/blog/categories/</loc>
         <lastmod>2013-10-10T02:43:53+08:00</lastmod>
     </url>
     <url>
-        <loc>http://ChanceDoor.github.io/</loc>
-        <lastmod>2013-11-07T16:38:37+08:00</lastmod>
+        <loc>http://chancedoor.github.io/</loc>
+        <lastmod>2013-11-23T20:59:58+08:00</lastmod>
     </url>
     <url>
-        <loc>http://ChanceDoor.github.io/robots.txt</loc>
+        <loc>http://chancedoor.github.io/robots.txt</loc>
         <lastmod>2013-10-10T02:09:37+08:00</lastmod>
     </url>
 </urlset>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[多多尔斯基的博客]]></title>
-  <link href="http://ChanceDoor.github.io/atom.xml" rel="self"/>
-  <link href="http://ChanceDoor.github.io/"/>
-  <updated>2013-11-07T16:39:05+08:00</updated>
-  <id>http://ChanceDoor.github.io/</id>
+  <link href="http://chancedoor.github.io/atom.xml" rel="self"/>
+  <link href="http://chancedoor.github.io/"/>
+  <updated>2013-11-23T21:01:00+08:00</updated>
+  <id>http://chancedoor.github.io/</id>
   <author>
     <name><![CDATA[Duo]]></name>
     <email><![CDATA[cd19900419@hotmail.com]]></email>
@@ -14,28 +14,145 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Git 版本管理工具简介]]></title>
-    <link href="http://ChanceDoor.github.io/blog/2013/11/07/git-introduce/"/>
+    <title type="html"><![CDATA[Git 版本管理工具简介及使用指南]]></title>
+    <link href="http://chancedoor.github.io/blog/2013/11/07/git-introduce/"/>
     <updated>2013-11-07T16:17:00+08:00</updated>
-    <id>http://ChanceDoor.github.io/blog/2013/11/07/git-introduce</id>
-    <content type="html"><![CDATA[<h2>Git 版本管理工具简介</h2>
+    <id>http://chancedoor.github.io/blog/2013/11/07/git-introduce</id>
+    <content type="html"><![CDATA[<h2>Git 版本管理工具简介及使用指南</h2>
 
-<p>尚未完成……</p>
+<h1>前言</h1>
+
+<p>这篇文章将简要介绍一个在开源领域具有重要意义的版本管理工具， Git ，事实上，结合 Github 、Bitbucket 等代码托管平台，它的作用在不断扩大，在软件开发、硬件开发、文档编写等各个领域都起着重要的作用。</p>
+
+<p>说到 Git 的诞生，你一定会觉得很诧异，原来其创造者就是大名鼎鼎的 Linus Torvalds ，没错， Git 就是李纳斯大神为了管理 Linux 内核开发而创造的一个开源的版本控制软件，而我们知道，Linux 系统本身就是开源领域最重要的项目之一。</p>
+
+<p>这篇文章主要介绍如何使用 Git 和 Github 来进行代码管理和享受开源社区的便利。</p>
+
+<h1>一、为什么要用版本管理</h1>
+
+<p>很多程序员，尤其是正在幻想自己可以改变世界的学生们，往往不重视开发流程中编码以外的东西，尤其是项目管理，这样会使得代码越来越混乱，以至于不得不推倒重建，更糟的是可能由于一些致命的错误令代码不可恢复。事实上所谓的敏捷开发更是依赖于版本管理工具的，否则敏捷开发根本无法有效运转。</p>
+
+<h1>二、我是否适合使用 Git</h1>
+
+<p>如果你不是一个开源社区的支持者，如果你只对封闭的软件开发有兴趣，如果你身处一个死板的大公司，那么或许你会更喜欢使用 SVN ，但事实上我认为能看到这篇文章的人，当然会选择使用 Git。Mecury 也是一个选择，但没有必要，用 Git 就好，等你熟悉这类工具了，再去研究工具之间的差异也不迟。</p>
+
+<h1>三、Github 安装</h1>
+
+<p>Git 虽然是个独立的工具，可以用于自己搭建的服务器或任何提供服务的服务商，但直接下载 Github 的集成工具将更容易，访问<a href="http://windows.github.com">Github for Windows</a>, 以及<a href="http://mac.github.com/">Github for Mac</a>。</p>
+
+<p>而这篇博客的操作命令主要以 Linux 系统为主， 尤其是 Debian 和 Ubuntu 系统，在这里推荐使用这两种分发版本，Ubuntu 事实上是 Debian 的衍生版本。</p>
+
+<p>Debian 和 Ubuntu 使用 apt-get 可以及其方便地管理应用：</p>
+
+<pre><code>$ apt-get install git-core
+</code></pre>
+
+<p>运行上面这一条命令就会自动安装 git 了。（Fedora 则是使用 yum。）</p>
+
+<p>事实上带 UI 界面的 Github 工具非常好用，只是需要把相关知识转化为界面中的操作。</p>
+
+<h1>四、创建 Repo</h1>
+
+<p>使用 Github 当然首先需要注册一个帐号：<a href="https://github.com">Github</a>。首页上就可以直接 Sign Up 了。账号建立以后，我们就可以往上传项目了，在 Git 中，一个项目被称为一个 Repository，即仓库的意思，简称 Repo 。一个 Repo 可以放置任何东西，一张图片或者一个文本文件，或者一整个项目，需要说明的是，Github 私有仓库是需要付费的，公开仓库是没有限制的，如果你有代码不想被别人看到，还可以选择使用 <a href="https://bitbucket.org">Bitbucket</a> ，他家可以免费使用私有仓库。</p>
+
+<p>回到 Github，要创建一个 Repo ，先点击头像旁边那个书一样的标签，输入仓库名称，直接点 Create repository 即可。随后就有提示告诉你如何将本地的项目设为 repo 并上传到 Github 中。</p>
+
+<p>对于不同的操作系统，以及不同的 Github 图形程序，具体操作可能有所不同，但主要就是在项目根目录下进行 git init 初始化，然后整个 push 到这个仓库的地址，一开始使用请选择用 HTTP 地址，往后可以设置 SSH。</p>
+
+<p>repo 创建完成并成功 push 后，刷新 Github 页面应该就能看到代码了。</p>
+
+<h1>五、常用操作</h1>
+
+<p>由于 Git 的使用并不复杂，基本上只要熟练常用操作，并理解它的机制，就可以很好地使用它了。</p>
+
+<p>下面以一个例子来简要概述一下用 Github 做开发管理的流程。</p>
+
+<p>首先由项目经理创建一个 repo ，进入项目目录，运行：</p>
+
+<pre><code>$ git init
+$ git commit -m "init"
+$ git remote add origin https://github.com/username/reponame.git
+$ git push -u origin master
+</code></pre>
+
+<p>第一行对当前目录进行了 git 初始化，会创建几个 git 相关的配置文件，如.git目录和 .gitignore 等，这一步相当于已经将项目创建为一个git repo 了。
+第二行是很常用的命令，每次对 repo 做出了修改，就需要add 并 commit ，这样才能把变更提交到 git 日志中，否则 git 并不知道你做了修改。
+第三行是将远程 repo 地址加入当前 git repo 的源配置文件中，也就是把当前目录下的一些操作默认设置为对这个远程仓库的操作。
+第四行就是向 origin 源的 master 分支推送代码。这个命令每次 commit 或多次之后使用。</p>
+
+<p>repo 创建完后默认具有一个 master 分支，一般来说 master 分支作为主分支，由项目经理管理，接受其他分支的合并请求，而不是直接在 master 分支上进行开发。所以最好新建一个 develop 分支（也可以取任何其它名字）：</p>
+
+<pre><code>$ git branch develop
+$ git push origin develop
+$ git checkout develop
+</code></pre>
+
+<p>第一行就是新建分支，但只是本地新建了，第二行是在远程 repo 中也新建这个分支。
+第三行则是切换到 develop 分支，同样也可以用 checkout 切换到别的分支，它还能用于撤销变更。</p>
+
+<pre><code>$ git branch
+</code></pre>
+
+<p>可以查看所有分支。</p>
+
+<p>在修改过本地项目后，使用：</p>
+
+<pre><code>$ git status
+</code></pre>
+
+<p>查看变动了哪些文件。</p>
+
+<p>使用：</p>
+
+<pre><code>$ git add .
+</code></pre>
+
+<p>将全部变更记录下来，但这只能记录修改和新增的文件，如果有删除文件的话，千万不要用</p>
+
+<pre><code>$ rm .
+</code></pre>
+
+<p>这样你的所有文件都会删除。</p>
+
+<p>比较好的办法是直接在 commit 时指定 +-a+ ：</p>
+
+<pre><code>$ git commit -a -m "this is a commit."
+</code></pre>
+
+<p>这相当于执行了 add 和 rm 并将修改提交。</p>
+
+<p>克隆别人的仓库：</p>
+
+<pre><code>$ git clone https://github.com/username/reponame.git
+</code></pre>
+
+<p>在最后加上自定义的名字即可克隆为该名字的目录。</p>
+
+<p>拉取远程仓库的更新：</p>
+
+<pre><code>$ git pull
+</code></pre>
+
+<p>相当于 fetch + merge，如果有冲突需要解决冲突。</p>
+
+<p>当开发分支将一个功能开发完，需要合并到主分支时，就需要发起一个 pull request，管理者审查完代码表示无误后，同意合并就可以将分支合并到主分支了。一般来说开发一个功能模块会新建一个分支，合并后删除该分支。</p>
+
+<p>在使用中遇到问题请查阅官方文档，以及善用 google，不过对英文有一定要求。幸运的是国内 git 的相关文章也很多，相信足以解决大部分问题，其中 conflict 的问题也许会困扰你一阵子，但解决过一次后就会发现其实并不困难。</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[用Octopress写博客]]></title>
-    <link href="http://ChanceDoor.github.io/blog/2013/11/07/blog-by-octopress/"/>
+    <link href="http://chancedoor.github.io/blog/2013/11/07/blog-by-octopress/"/>
     <updated>2013-11-07T15:32:00+08:00</updated>
-    <id>http://ChanceDoor.github.io/blog/2013/11/07/blog-by-octopress</id>
+    <id>http://chancedoor.github.io/blog/2013/11/07/blog-by-octopress</id>
     <content type="html"><![CDATA[<h2>用Octopress写博客</h2>
 
 <h1>前言</h1>
 
 <p>上一篇文章已经说了，Jekyll 是一个非常酷的博客框架，那么它的衍生品该如何评价呢？那就是超级酷的 Octopress！什么？你觉得我说得言过其实了？那你可以看看我这个博客，除非你拿出个更酷的说服我，不然就接受这个现实吧。</p>
 
-<p>当然也有异常小清新的同学还是喜欢 Jekyll 的简洁方便，那请移步<a href="http://chancedoor.github.io/blog/2013/10/09/first-post/">用  Jekyll 写博客</a></p>
+<p>当然也有异常小清新的同学还是喜欢 Jekyll 的简洁方便，那请移步<a href="http://chancedoor.github.io/blog/2013/10/09/first-post/">用 Jekyll 写博客</a></p>
 
 <h1>第一步：所需环境</h1>
 
@@ -45,8 +162,8 @@
 
 <p>运行</p>
 
-<pre><code>git clone https://github.com/imathis/octopress.git octopress    
-cd octopress     
+<pre><code>git clone https://github.com/imathis/octopress.git octopress
+cd octopress
 bundle install
 </code></pre>
 
@@ -71,20 +188,20 @@ bundle install
 
 <p>运行</p>
 
-<pre><code>rake setup_github_pages    
+<pre><code>rake setup_github_pages
 </code></pre>
 
 <p>输入 Github repo 的地址，再输入以下指令：</p>
 
 <pre><code>rake generate
-rake deploy    
+rake deploy
 </code></pre>
 
 <p>这两条命令生成了博客静态文件，并将其部署到 Github 上。</p>
 
 <pre><code>git add .
 git commit -m 'your message'
-git push origin source     
+git push origin source
 </code></pre>
 
 <p>这三条命令是将整个项目的修改提交到 Github 的 source 分支，目的是保存最新的源代码。</p>
@@ -105,7 +222,7 @@ git push origin source
 
 <p>这会在 source/_posts/ 下生成一个 markdown 文件，打开它即可开始编写文章。</p>
 
-<p>文件的开头同样是说明性的代码块，将这里的 title 改成中文就没有什么问题了。  <br/>
+<p>文件的开头同样是说明性的代码块，将这里的 title 改成中文就没有什么问题了。
 目录 categories 可以指定单个也可指定多个：</p>
 
 <p>单个</p>
@@ -115,20 +232,20 @@ git push origin source
 
 <p>多个</p>
 
-<pre><code>categories: [CSS3, Sass, Media Queries]    
+<pre><code>categories: [CSS3, Sass, Media Queries]
 </code></pre>
 
 <p>当你写完一篇文章并保存后，运行</p>
 
 <pre><code>rake generate
-rake deploy   
+rake deploy
 </code></pre>
 
 <p>就可完成部署了。</p>
 
 <h1>第六步：更改主题样式</h1>
 
-<p>为了定制出自己喜欢的博客样式，就需要知道如何使用别人提供的主题，非常简单，这里以我所使用的主题为例。  <br/>
+<p>为了定制出自己喜欢的博客样式，就需要知道如何使用别人提供的主题，非常简单，这里以我所使用的主题为例。
 在博客程序根目录下输入：</p>
 
 <pre><code>$ git clone https://github.com/shashankmehta/greyshade.git .themes/greyshade
@@ -140,7 +257,7 @@ $ rake generate
 <p>这就完成了，当然其中还有一些自定义的内容需要你去修改。
 运行</p>
 
-<pre><code>rake deploy   
+<pre><code>rake deploy
 </code></pre>
 
 <p>访问上文提到的你的 Github Pages 地址，就可以看到你的博客了。</p>
@@ -149,9 +266,9 @@ $ rake generate
   
   <entry>
     <title type="html"><![CDATA[用Jekyll写博客]]></title>
-    <link href="http://ChanceDoor.github.io/blog/2013/10/09/first-post/"/>
+    <link href="http://chancedoor.github.io/blog/2013/10/09/first-post/"/>
     <updated>2013-10-09T03:16:00+08:00</updated>
-    <id>http://ChanceDoor.github.io/blog/2013/10/09/first-post</id>
+    <id>http://chancedoor.github.io/blog/2013/10/09/first-post</id>
     <content type="html"><![CDATA[<h2>用Jekyll写博客</h2>
 
 <h1>前言</h1>

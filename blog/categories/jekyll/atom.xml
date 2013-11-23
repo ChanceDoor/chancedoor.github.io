@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Jekyll | 多多尔斯基的博客]]></title>
-  <link href="http://ChanceDoor.github.io/blog/categories/jekyll/atom.xml" rel="self"/>
-  <link href="http://ChanceDoor.github.io/"/>
-  <updated>2013-11-07T16:39:05+08:00</updated>
-  <id>http://ChanceDoor.github.io/</id>
+  <link href="http://chancedoor.github.io/blog/categories/jekyll/atom.xml" rel="self"/>
+  <link href="http://chancedoor.github.io/"/>
+  <updated>2013-11-23T21:01:00+08:00</updated>
+  <id>http://chancedoor.github.io/</id>
   <author>
     <name><![CDATA[Duo]]></name>
     <email><![CDATA[cd19900419@hotmail.com]]></email>
@@ -15,16 +15,16 @@
   
   <entry>
     <title type="html"><![CDATA[用Octopress写博客]]></title>
-    <link href="http://ChanceDoor.github.io/blog/2013/11/07/blog-by-octopress/"/>
+    <link href="http://chancedoor.github.io/blog/2013/11/07/blog-by-octopress/"/>
     <updated>2013-11-07T15:32:00+08:00</updated>
-    <id>http://ChanceDoor.github.io/blog/2013/11/07/blog-by-octopress</id>
+    <id>http://chancedoor.github.io/blog/2013/11/07/blog-by-octopress</id>
     <content type="html"><![CDATA[<h2>Category: Jekyll</h2>
 
 <h1>前言</h1>
 
 <p>上一篇文章已经说了，Jekyll 是一个非常酷的博客框架，那么它的衍生品该如何评价呢？那就是超级酷的 Octopress！什么？你觉得我说得言过其实了？那你可以看看我这个博客，除非你拿出个更酷的说服我，不然就接受这个现实吧。</p>
 
-<p>当然也有异常小清新的同学还是喜欢 Jekyll 的简洁方便，那请移步<a href="http://chancedoor.github.io/blog/2013/10/09/first-post/">用  Jekyll 写博客</a></p>
+<p>当然也有异常小清新的同学还是喜欢 Jekyll 的简洁方便，那请移步<a href="http://chancedoor.github.io/blog/2013/10/09/first-post/">用 Jekyll 写博客</a></p>
 
 <h1>第一步：所需环境</h1>
 
@@ -34,8 +34,8 @@
 
 <p>运行</p>
 
-<pre><code>git clone https://github.com/imathis/octopress.git octopress    
-cd octopress     
+<pre><code>git clone https://github.com/imathis/octopress.git octopress
+cd octopress
 bundle install
 </code></pre>
 
@@ -60,20 +60,20 @@ bundle install
 
 <p>运行</p>
 
-<pre><code>rake setup_github_pages    
+<pre><code>rake setup_github_pages
 </code></pre>
 
 <p>输入 Github repo 的地址，再输入以下指令：</p>
 
 <pre><code>rake generate
-rake deploy    
+rake deploy
 </code></pre>
 
 <p>这两条命令生成了博客静态文件，并将其部署到 Github 上。</p>
 
 <pre><code>git add .
 git commit -m 'your message'
-git push origin source     
+git push origin source
 </code></pre>
 
 <p>这三条命令是将整个项目的修改提交到 Github 的 source 分支，目的是保存最新的源代码。</p>
@@ -94,7 +94,7 @@ git push origin source
 
 <p>这会在 source/_posts/ 下生成一个 markdown 文件，打开它即可开始编写文章。</p>
 
-<p>文件的开头同样是说明性的代码块，将这里的 title 改成中文就没有什么问题了。  <br/>
+<p>文件的开头同样是说明性的代码块，将这里的 title 改成中文就没有什么问题了。
 目录 categories 可以指定单个也可指定多个：</p>
 
 <p>单个</p>
@@ -104,20 +104,20 @@ git push origin source
 
 <p>多个</p>
 
-<pre><code>categories: [CSS3, Sass, Media Queries]    
+<pre><code>categories: [CSS3, Sass, Media Queries]
 </code></pre>
 
 <p>当你写完一篇文章并保存后，运行</p>
 
 <pre><code>rake generate
-rake deploy   
+rake deploy
 </code></pre>
 
 <p>就可完成部署了。</p>
 
 <h1>第六步：更改主题样式</h1>
 
-<p>为了定制出自己喜欢的博客样式，就需要知道如何使用别人提供的主题，非常简单，这里以我所使用的主题为例。  <br/>
+<p>为了定制出自己喜欢的博客样式，就需要知道如何使用别人提供的主题，非常简单，这里以我所使用的主题为例。
 在博客程序根目录下输入：</p>
 
 <pre><code>$ git clone https://github.com/shashankmehta/greyshade.git .themes/greyshade
@@ -129,7 +129,7 @@ $ rake generate
 <p>这就完成了，当然其中还有一些自定义的内容需要你去修改。
 运行</p>
 
-<pre><code>rake deploy   
+<pre><code>rake deploy
 </code></pre>
 
 <p>访问上文提到的你的 Github Pages 地址，就可以看到你的博客了。</p>
@@ -138,9 +138,9 @@ $ rake generate
   
   <entry>
     <title type="html"><![CDATA[用Jekyll写博客]]></title>
-    <link href="http://ChanceDoor.github.io/blog/2013/10/09/first-post/"/>
+    <link href="http://chancedoor.github.io/blog/2013/10/09/first-post/"/>
     <updated>2013-10-09T03:16:00+08:00</updated>
-    <id>http://ChanceDoor.github.io/blog/2013/10/09/first-post</id>
+    <id>http://chancedoor.github.io/blog/2013/10/09/first-post</id>
     <content type="html"><![CDATA[<h2>Category: Jekyll</h2>
 
 <h1>前言</h1>

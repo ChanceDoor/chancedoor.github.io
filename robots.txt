@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://ChanceDoor.github.io/sitemap.xml 
+Sitemap: http://chancedoor.github.io/sitemap.xml 
